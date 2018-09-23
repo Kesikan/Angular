@@ -1,0 +1,20 @@
+<h2>Courses {{title}} compnent</h2>
+                <ul>
+                    <li *ngFor="let course of courses">
+                        {{course}}
+                    </li>
+                </ul>
+
+                <app-favorite></app-favorite> 
+                <br>
+                <img src="{{imageUrl}}" />
+                <img [src]= "imageUrl" /><br>
+                <button [style.backgroundColor]="isActive? 'green' : 'red'">Save</button>
+                <br>
+                <button (click)="onSave($event)">test</button>
+                <input [(ngModel)] ="email" (keyup.enter)="onKeyUp()"/>
+                <br/>
+                {{course.title | uppercase}} <br/>
+                {{course.students | number}} <br/>
+                {{course.price | number}} <br/>
+                {{course.releaseDate }} <br/>
