@@ -1,0 +1,8 @@
+
+<p>{{tweet.body}}</p>
+<span class="glyphicon glyphicon-heart" 
+[class.highlighted]="tweet.isLiked" 
+(click)="onClick()">
+
+</span>
+<span>{{tweet.likeCount}}</span>

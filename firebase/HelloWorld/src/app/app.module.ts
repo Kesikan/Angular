@@ -3,6 +3,8 @@ import {HttpModule} from '@angular/http'
 import { AuthorsService } from './authors.service';
 import { CoursesService } from './courses.service';
 import { BrowserModule } from '@angular/platform-browser';
+import { AngularFireModule} from 'angularfire2';
+import { AngularFireDatabaseModule} from 'angularfire2/database';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 import { NgModule } from '@angular/core';
@@ -20,6 +22,11 @@ import { SignupFormComponent } from './signup-form/signup-form/signup-form.compo
 import { PostsComponent } from './posts/posts.component';
 import { PostService } from './services/post.service';
 import { InputFormatDirective } from './input-format.directive';
+import { EmployeesComponent } from './employees/employees.component';
+import { EmployeeComponent } from './employees/employee/employee.component';
+import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
+
+import {environment} from '../environments/environment'
 
 
 @NgModule({
@@ -35,13 +42,18 @@ import { InputFormatDirective } from './input-format.directive';
     ContactFormComponent,
     SignupFormComponent,
     PostsComponent,
-    InputFormatDirective
+    InputFormatDirective,
+    EmployeesComponent,
+    EmployeeComponent,
+    EmployeeListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [
     CoursesService,

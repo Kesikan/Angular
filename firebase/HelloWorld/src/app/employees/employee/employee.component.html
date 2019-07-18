@@ -1,0 +1,23 @@
+<form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
+<div class="form-group">
+  <label for="">Name</label>
+  <input class="form-control" name="name" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.name" placeholder="Full name">
+</div>
+<div class="form-group">
+  <label for="">Position</label>
+  <input class="form-control" name="position" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.position" placeholder="Position">
+</div>
+<div class="form-group">
+  <label for="">Name</label>
+  <input class="form-control" name="office" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.office" placeholder="Office">
+</div>
+<div class="form-group">
+  <label for="">Salary</label>
+  <input class="form-control" name="salary" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.salary" placeholder="Salary">
+</div>
+<div class="form-group">
+  <button type="submit" class="btn btn-default">Submit</button>
+  <button type="button" class="btn btn-default">Delete</button>
+  <button type="button" class="btn btn-default">Reset</button>
+</div>
+</form>
